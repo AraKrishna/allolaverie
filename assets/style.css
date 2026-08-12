@@ -1,0 +1,640 @@
+/* ============================================================
+   AlloLaverie — piste A « rétro-laverie moderne »
+   Palette : bleu de travail / crème / orange 70s / encre
+   ============================================================ */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/fonts/bricolage-800-latin.woff2") format("woff2");
+}
+
+:root {
+  --bleu: #1d4ed8;
+  --bleu-fonce: #16389c;
+  --creme: #fdf6ec;
+  --orange: #f4732c;
+  --orange-fonce: #c2410c;
+  --encre: #1b1b1f;
+  --blanc: #ffffff;
+  --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --texte: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+  --ombre: 5px 5px 0 var(--encre);
+  --bord: 3px solid var(--encre);
+  --rayon: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--texte);
+  font-size: 1.0625rem; /* 17px — cible 50+ */
+  line-height: 1.65;
+  color: var(--encre);
+  background: var(--creme);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--bleu); }
+a:hover { color: var(--bleu-fonce); }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.5rem, 9vw, 4.5rem); color: var(--encre); }
+h2 { font-size: clamp(1.7rem, 6vw, 2.5rem); color: var(--bleu); margin-bottom: 1.2rem; }
+h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+
+p { margin-bottom: 1rem; }
+
+/* ---------- Rayures « auvent de devanture » ---------- */
+.rayures {
+  height: 14px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--bleu) 0 28px,
+    var(--blanc) 28px 56px
+  );
+  border-top: var(--bord);
+  border-bottom: var(--bord);
+}
+
+/* ---------- Header ---------- */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--creme);
+  border-bottom: var(--bord);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--encre);
+  text-decoration: none;
+}
+.logo img { width: 26px; height: 26px; margin-right: 0.45rem; }
+
+.header-droite { display: flex; align-items: center; gap: 0.5rem; }
+
+.btn-lang {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--encre);
+  background: var(--blanc);
+  border: 2px solid var(--encre);
+  border-radius: 8px;
+  padding: 0.3rem 0.55rem;
+  text-decoration: none;
+}
+.logo .point { color: var(--orange-fonce); }
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: var(--bord);
+  border-radius: var(--rayon);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn:hover { color: var(--encre); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--encre); }
+
+.btn-appel {
+  background: var(--orange);
+  color: var(--encre);
+  font-size: 1.3rem;
+  padding: 1rem 1.6rem;
+  box-shadow: var(--ombre);
+  width: 100%;
+}
+
+.btn-appel-mini {
+  background: var(--orange);
+  color: var(--encre);
+  font-size: 0.95rem;
+  padding: 0.55rem 0.9rem;
+  box-shadow: 3px 3px 0 var(--encre);
+  white-space: nowrap;
+}
+
+.btn-secondaire {
+  background: var(--blanc);
+  color: var(--encre);
+  font-size: 1.05rem;
+  padding: 0.85rem 1.4rem;
+  box-shadow: var(--ombre);
+}
+
+/* ---------- Sections ---------- */
+section, .section {
+  padding: 3.2rem 1.25rem;
+}
+
+.contenu {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.centre { text-align: center; }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+
+.surtitre {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-fonce);
+  margin-bottom: 0.9rem;
+}
+
+.hero h1 { margin-bottom: 1.2rem; }
+.hero h1 .accent { color: var(--bleu); }
+
+.douleur {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero .pitch { margin-bottom: 1.8rem; }
+
+.numero-demo {
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.numero-note {
+  font-size: 0.92rem;
+  color: var(--orange-fonce);
+  font-weight: 600;
+}
+
+/* Hublot décoratif */
+.hublot {
+  width: 190px;
+  height: 190px;
+  margin: 2rem auto 0;
+  border-radius: 50%;
+  border: 10px solid var(--bleu);
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #dbe6ff 55%, #b9cdfb 100%);
+  box-shadow: var(--ombre), inset 0 0 0 6px var(--blanc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+.hublot span {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--bleu-fonce);
+}
+
+/* Badges de réassurance */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.6rem;
+  list-style: none;
+}
+.badges li {
+  background: var(--blanc);
+  border: 2px solid var(--encre);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Pastille prix façon macaron 70s */
+.pastille {
+  display: inline-block;
+  background: var(--orange);
+  border: var(--bord);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--encre);
+  padding: 0.5rem 1.1rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  transform: rotate(-2deg);
+}
+
+/* ---------- Cartes étapes ---------- */
+.etapes { display: grid; gap: 1.2rem; margin-top: 1.6rem; }
+
+.etape {
+  background: var(--blanc);
+  border: var(--bord);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 1.4rem;
+}
+
+.etape .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 2px solid var(--encre);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+}
+
+/* ---------- Incidents ---------- */
+.incidents { list-style: none; display: grid; gap: 1rem; margin-top: 1.4rem; }
+
+.incidents li {
+  background: var(--blanc);
+  border: 2px solid var(--encre);
+  border-left: 8px solid var(--orange);
+  border-radius: 10px;
+  padding: 0.95rem 1.1rem;
+}
+.incidents .citation {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.encadre {
+  margin-top: 1.6rem;
+  background: var(--bleu);
+  color: var(--blanc);
+  border: var(--bord);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 1.3rem 1.4rem;
+}
+.encadre strong { color: var(--blanc); }
+.encadre p { margin: 0; }
+
+/* ---------- Preuve : témoignage exploitant ---------- */
+.temoignage {
+  background: var(--creme);
+  border: 2px solid var(--encre);
+  border-left: 8px solid var(--bleu);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin: 1rem 0 1.6rem;
+}
+.temoignage p {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.temoignage footer {
+  font-size: 0.9rem;
+  color: #6e6e73;
+}
+
+/* ---------- Preuve : transcript façon iMessage ---------- */
+.transcript {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin-bottom: 0.7rem;
+}
+.msg.client { align-self: flex-end; align-items: flex-end; }
+.msg.ia { align-self: flex-start; align-items: flex-start; }
+
+.msg .qui {
+  font-size: 0.74rem;
+  color: #6e6e73;
+  margin: 0 0.8rem 0.2rem;
+}
+
+.bulle {
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  border-radius: 18px;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+.msg.client .bulle { background: #0b74c7; color: #fff; }
+.msg.ia .bulle { background: #e9e9eb; color: #1b1b1f; }
+
+/* Queues des bulles (technique du double pseudo-élément) */
+.msg .bulle::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 0;
+}
+.msg .bulle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 20px;
+  background: var(--blanc);
+  z-index: 1;
+}
+.msg.client .bulle::before { right: -8px; background: #0b74c7; border-bottom-left-radius: 15px; }
+.msg.client .bulle::after { right: -10px; border-bottom-left-radius: 10px; }
+.msg.ia .bulle::before { left: -8px; background: #e9e9eb; border-bottom-right-radius: 15px; }
+.msg.ia .bulle::after { left: -10px; border-bottom-right-radius: 10px; }
+
+/* ---------- Preuve : SMS gérant façon notification iOS ---------- */
+.notif-ios {
+  background: #f2f2f7;
+  border-radius: 22px;
+  padding: 0.9rem 1.1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+  max-width: 26rem;
+}
+.notif-entete {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.45rem;
+}
+.notif-icone { border-radius: 5px; }
+.notif-app {
+  flex: 1;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6e6e73;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.notif-heure { font-size: 0.75rem; color: #6e6e73; }
+.notif-titre { font-weight: 700; font-size: 0.98rem; margin: 0 0 0.15rem; }
+.notif-corps { font-size: 0.95rem; line-height: 1.45; margin: 0; color: #1b1b1f; }
+
+.photo-placeholder {
+  background: repeating-linear-gradient(45deg, #dbe6ff 0 14px, var(--blanc) 14px 28px);
+  border: var(--bord);
+  border-radius: var(--rayon);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-bottom: 1.4rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ---------- Tarif ---------- */
+.carte-tarif {
+  background: var(--blanc);
+  border: var(--bord);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.prix {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(3rem, 12vw, 4.5rem);
+  color: var(--encre);
+  line-height: 1;
+}
+.prix small {
+  font-size: 0.35em;
+  color: var(--orange-fonce);
+}
+.inclus { list-style: none; margin: 1.4rem 0; display: grid; gap: 0.5rem; text-align: left; }
+.inclus li { padding-left: 1.7rem; position: relative; }
+.inclus li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+  color: var(--orange-fonce);
+}
+
+/* ---------- FAQ ---------- */
+.faq details {
+  background: var(--blanc);
+  border: 2px solid var(--encre);
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.95rem 1.1rem;
+  list-style: none;
+  position: relative;
+  padding-right: 2.6rem;
+  min-height: 48px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--orange-fonce);
+}
+.faq details[open] summary::after { content: "−"; }
+.faq details p { padding: 0 1.1rem 1rem; margin: 0; }
+
+/* ---------- Formulaire ---------- */
+form.rappel {
+  background: var(--blanc);
+  border: var(--bord);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+form.rappel label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: grid;
+  gap: 0.3rem;
+}
+form.rappel input,
+form.rappel select {
+  font: inherit;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid var(--encre);
+  border-radius: 10px;
+  background: var(--creme);
+  min-height: 48px;
+  width: 100%;
+}
+form.rappel input:focus-visible,
+form.rappel select:focus-visible,
+a:focus-visible, .btn:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 2px;
+}
+.note-form { font-size: 0.9rem; color: var(--orange-fonce); font-weight: 600; margin: 0; }
+.aide { font-weight: 400; font-size: 0.85rem; color: #6e6e73; }
+.champ-cache { position: absolute; left: -9999px; }
+
+/* ---------- Barre d'appel collante (mobile) ---------- */
+.barre-appel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  padding: 0.6rem 0.9rem calc(0.6rem + env(safe-area-inset-bottom));
+  background: var(--creme);
+  border-top: var(--bord);
+  transform: translateY(110%);
+  transition: transform 0.25s ease;
+}
+.barre-appel.visible { transform: translateY(0); }
+.barre-appel .btn-appel { font-size: 1.1rem; padding: 0.8rem 1rem; box-shadow: none; }
+
+@media (min-width: 760px) {
+  .barre-appel { display: none; }
+  .etapes { grid-template-columns: repeat(3, 1fr); }
+  section, .section { padding: 4.5rem 1.5rem; }
+}
+
+/* ---------- Bandeau arithmétique ---------- */
+.arithmetique {
+  background: var(--encre);
+  color: var(--blanc);
+  border-top: var(--bord);
+}
+.arithmetique .ligne {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 5.5vw, 2rem);
+  line-height: 1.3;
+  margin: 0;
+}
+.arithmetique .finale {
+  color: var(--orange);
+  font-size: clamp(1.6rem, 7vw, 2.6rem);
+  margin-top: 0.4rem;
+}
+.arithmetique .morale {
+  margin: 1.3rem 0 0;
+  color: #cfcfd6;
+  font-size: 1rem;
+}
+
+/* ---------- Sections alternées ---------- */
+.fond-blanc { background: var(--blanc); }
+.fond-bleu { background: var(--bleu); color: var(--blanc); }
+.fond-bleu h2 { color: var(--blanc); }
+.fond-bleu a { color: #ffd9c2; }
+
+/* ---------- Footer ---------- */
+footer.site {
+  background: var(--encre);
+  color: #e8e8e8;
+  padding: 2.5rem 1.25rem calc(2.5rem + 70px); /* espace pour la barre collante */
+  text-align: center;
+  font-size: 0.95rem;
+}
+footer.site a { color: #ffd9c2; }
+footer.site .signature {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--blanc);
+}
+footer.site .clin-oeil {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  color: #9a9aa2;
+}
+footer.site nav { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 0.8rem; }
+
+@media (min-width: 760px) {
+  footer.site { padding-bottom: 2.5rem; }
+}
+
+/* ---------- Pages articles (SEO) ---------- */
+.article h1 { font-size: clamp(1.9rem, 7vw, 3rem); margin-bottom: 1.2rem; }
+.article h2 { font-size: clamp(1.35rem, 5vw, 1.8rem); margin-top: 2.2rem; }
+.article ul, .article ol { margin: 0 0 1rem 1.4rem; }
+.article li { margin-bottom: 0.4rem; }
+.reponse-directe {
+  background: var(--blanc);
+  border: var(--bord);
+  border-left: 8px solid var(--orange);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.6rem;
+  font-weight: 600;
+}
+.retour { font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; }
+
+/* ---------- Divers ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--encre);
+  color: var(--blanc);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; color: var(--blanc); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .barre-appel { transition: none; }
+}

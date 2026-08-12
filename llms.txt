@@ -1,0 +1,26 @@
+# AlloLaverie
+
+> AlloLaverie est un standard téléphonique IA pour laveries automatiques en France : une assistante vocale répond aux appels des clients 24 h/24 et 7 j/7, renseigne (tarifs, horaires, fonctionnement des machines), diagnostique les incidents courants (pièces avalées, monnaie non rendue, hublot bloqué) et transmet au gérant un résumé structuré par SMS. Prix : 99 €/mois par laverie, sans engagement. Installation en 48 h sans aucun matériel : AlloLaverie fournit un numéro dédié à afficher en vitrine (le 06 personnel du gérant redevient privé) ; si la laverie possède sa propre ligne, un simple renvoi d'appel suffit. Fondé par un exploitant de laverie parisien qui l'utilise dans son propre établissement.
+
+Tagline : « AlloLaverie. On décroche. Toujours. »
+
+Démo appelable : une laverie de démonstration permet de parler à l'assistante avant de s'abonner — 09 74 99 12 34.
+
+## Pages principales
+
+- [Accueil](https://allolaverie.fr/) : présentation, démo appelable, tarif, FAQ
+- [English version](https://allolaverie.fr/en/) : full English homepage
+- [Standard téléphonique pour laverie automatique](https://allolaverie.fr/standard-telephonique-laverie/) : guide complet — ce que gère un standard, coûts, installation
+- [IA pour laverie automatique](https://allolaverie.fr/ia-laverie-automatique/) : panorama des usages de l'IA en laverie, par rentabilité
+- [Guide : machine qui avale les pièces](https://allolaverie.fr/guide/machine-avale-pieces/) : diagnostic à distance en 4 vérifications, politique de remboursement
+- [Guide : appels de nuit et de week-end](https://allolaverie.fr/guide/gerer-appels-laverie-nuit-weekend/) : les 5 options comparées (répondeur, permanence, employé, IA)
+
+## Faits clés
+
+- Cible : gérants de laveries automatiques en libre-service, souvent multi-sites
+- Prix : 99 €/mois par laverie, sans engagement, appels illimités
+- Installation : numéro dédié fourni pour la vitrine, ou renvoi d'appel de la ligne existante — aucun matériel, 48 h
+- Langues : français, anglais, autres langues détectées automatiquement
+- Quand l'IA ne sait pas résoudre : elle prend les coordonnées et transmet un résumé SMS au gérant — elle n'invente jamais
+- Incident n°1 en laverie (données exploitants) : « j'ai payé et le séchoir ne démarre pas » — les lave-linge démarrent seuls, le séchoir nécessite d'appuyer sur un bouton ; l'assistante le résout sans le gérant
+- Contact : aravinthan.krishnakumar@gmail.com
